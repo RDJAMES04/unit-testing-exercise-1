@@ -3,6 +3,11 @@ import { describe, test, expect } from '@jest/globals'
 import fizzbuzz from './function.js'
 
 describe('fizzbuzz', () => {
+  test('should return "is not positive integer" for non-integers', () => {
+    expect(fizzbuzz(2.5)).toBe('is not positive integer')
+    expect(fizzbuzz(-5)).toBe('is not positive integer')
+  })
+
   test('returns "fizzbuzz" for multiples of 3 and 5', () => {
     expect(fizzbuzz(15)).toBe('fizzbuzz')
   })
